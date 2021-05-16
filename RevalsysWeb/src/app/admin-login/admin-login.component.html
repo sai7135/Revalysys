@@ -1,0 +1,20 @@
+<div class="panel panel-default center-block">
+    <div class="panel-body">
+        <form [formGroup]="LoginForm">
+            <table>
+                <tr>
+                    <td colspan="2"><h3>Login:</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="username">User Name:</label></td><td><input id="username" type="text" formControlName="UserName" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="password">Password:</label></td><td><input id="password" type="password" formControlName="Password" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right"><button (click)="Login()" class="btn btn-success btn-default">Login</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

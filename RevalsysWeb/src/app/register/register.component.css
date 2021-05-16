@@ -1,0 +1,13 @@
+.panel{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+td{
+    padding: 1em;
+}
+label{
+    display: block;
+}

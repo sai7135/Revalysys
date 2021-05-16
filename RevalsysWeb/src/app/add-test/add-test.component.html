@@ -1,0 +1,53 @@
+
+<form [formGroup]="NewQuestionForm">
+    <div class="panel panel-default center-block">
+        <table>
+            <tr>
+                <td><label for="testname">Test Name:</label></td><td><input formControlName="TestName" id="testname" type="text" class="form-control"></td>
+            </tr>
+        </table>
+    </div>
+    <div *ngFor="let v of AddedQuestions" class="panel panel-default center-block">
+        <h3>{{v}}</h3>
+    </div>
+    <div class="panel panel-default center-block">
+        <table>
+            <tr>
+                <td><label for="">Question</label></td><td><textarea formControlName="Question" type="text" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <td align="right"><input formControlName="Answer" type="radio" value=1></td><td><input formControlName="Option1" placeholder="Option A" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td align="right"><input type="radio" formControlName="Answer" value=2></td><td><input formControlName="Option2" type="text" placeholder="Option B" class="form-control"></td>
+            </tr>
+            <tr>
+                <td align="right"><input type="radio" formControlName="Answer" value=3></td><td><input formControlName="Option3" type="text" placeholder="Option C" class="form-control"></td>
+            </tr>
+            <tr>
+                <td align="right"><input type="radio" formControlName="Answer" value=4></td><td><input formControlName="Option4" type="text" placeholder="Option D" class="form-control"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><button (click)="AddQuestion()" class="btn btn-success">Add</button></td>
+            </tr>
+        </table>
+    </div>
+</form>
+<div class="panel panel-default center-block">
+    <form class="form-inline" [formGroup]="AddTest">
+        <div class="form-group row">
+            <div class="col-lg-4">
+            <input class="form-control" formControlName="Hours" placeholder="Hours" type="number">
+            </div>
+            <div class="col-lg-4">
+            <input class="form-control" formControlName="Minutes" placeholder="Minutes" type="number">
+            </div>
+            <div class="col-lg-4">
+            <input class="form-control" formControlName="Seconds" placeholder="Seconds" type="number">
+            </div>
+        </div>
+        <div class="form-group row"><div class="col-lg-4">
+            <button (click)="AddDuration()" class="btn btn-success">Add Test</button>
+        </div></div>
+    </form>
+</div>

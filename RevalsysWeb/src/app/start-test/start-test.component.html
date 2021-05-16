@@ -1,0 +1,57 @@
+<table class="bottomtable"><tr>
+    <td align="right"><h4 class="pull-right text-danger">{{Timer}}</h4></td>
+</tr></table>
+<form [formGroup]="AnswerForm">
+    <div formArrayName="Answer">
+        <div class="margin" *ngFor="let each of testData | slice: (page-1) * pageSize : page * pageSize;let i=index">
+            <table>
+                <tr>
+                <td class="index"><h4>{{(page-1)*pageSize+i+1}}.</h4></td>
+                <td>
+                    <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h3>{{each.question}}</h3>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td><input type="radio" [formControlName]="(page-1)*pageSize+i" value="1"></td>
+                                <td>{{each.option1}}</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" [formControlName]="(page-1)*pageSize+i" value="2"></td>
+                                <td>{{each.option2}}</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" [formControlName]="(page-1)*pageSize+i" value="3"></td>
+                                <td>{{each.option3}}</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" [formControlName]="(page-1)*pageSize+i" value="4"></td>
+                                <td>{{each.option4}}</td>
+                                <td align="right"><button (click)="ClearSelection((page-1)*pageSize+i)" class="btn btn-success">Clear Selection</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <table class="bottomtable">
+            <tr>
+                <td align="center">
+                    <button (click)="Submit()" class="btn btn-success">Submit</button>
+                </td>
+                <td align="center">
+                    <ngb-pagination
+                    [(page)]="page"
+                    [pageSize]="pageSize"
+                    [collectionSize]="testData.length"></ngb-pagination>
+                </td>
+            </tr>
+        </table>
+    </div>
+  </form>

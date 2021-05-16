@@ -1,0 +1,27 @@
+<div class="panel panel-default center-block">
+    <div class="panel-body">
+        <form [formGroup]="RegisterForm">
+            <table>
+                <tr>
+                    <td colspan="2"><h3>Register:</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="email">Email:</label></td><td><input id="email" type="email" formControlName="Username" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="password">Password:</label></td><td><input id="password" formControlName="Password" type="password" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="confirmpassword">Confirm Password:</label></td><td><input formControlName="ConfirmPassword" id="confirmpassword" type="password" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right"><button (click)="SignUp()" class="btn btn-success btn-default">Register</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><h4><a routerLink="/login">Already Registerd?</a></h4></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+      <div *ngFor="let e of Elements" class="col-md-3">
+        <div (click)="StartTest(e)" class="panel panel-default">
+          <div class="panel-body">
+            <h4>{{e.testName}}</h4>
+            <h5>{{e.hours}}:{{e.minutes}}:{{e.seconds}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

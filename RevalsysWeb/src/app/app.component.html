@@ -1,0 +1,15 @@
+<nav>
+    <ul class="nav nav-pills navbar-default">
+        <li role="presentation" class="navbar-nav navbar-brand">REVALSYS</li>
+        <li *ngIf=!loggedin role="presentation" class="navbar-nav"><a class="navbar-btn" routerLink="/home">Home</a></li>
+        <li *ngIf=!loggedin role="presentation" class="navbar-nav pull-right"><button routerLink="/login" class="btn btn-success btn-default navbar-btn">Log In</button></li>
+        <li *ngIf=!loggedin role="presentation" class="navbar-nav pull-right"><button routerLink="/register" class="btn btn-warning btn-default navbar-btn">Sign Up</button></li>
+        <li *ngIf=!loggedin role="presentation" class="navbar-nav pull-right"><button routerLink="/adminlogin" class="btn btn-outline-primary navbar-btn">Admin Log In</button></li>
+        <li *ngIf=loggedin class="navbar-nav pull-right">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            {{username}} <span class="caret"></span></a><ul class="dropdown-menu">
+                <li><a (click)="logout()">Log Out</a></li>
+              </ul></li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
